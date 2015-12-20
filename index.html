@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Nemesis Initializr</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./css/nemesis.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./css/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="initializr-header">
+            <div class="container">
+                <h1>Nemesis Initializr</h1>
+
+                <p>Bootstrap your application now</p>
+            </div>
+        </div>
+    </div>
+    <form id="form" class="form-horizontal" action="#" method="get">
+        <input id="baseDir" name="baseDir" type="hidden" value="demo">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Project metadata</h3>
+
+                <div class="form-group">
+                    <label for="groupId" class="col-md-3 control-label">Group</label>
+
+                    <div class="col-md-8">
+                        <input id="groupId" class="form-control" type="text" value="org.test" name="groupId" onkeyup="changeIt();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="artifactId" class="col-md-3 control-label">Artifact</label>
+
+                    <div class="col-md-8">
+                        <input id="artifactId" class="form-control" type="text" value="demo" name="artifactId" onkeyup="changeIt();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="version" class="col-md-3 control-label">Version</label>
+
+                    <div class="col-md-8">
+                        <input id="version" class="form-control" type="text" value="1.0-SNAPSHOT" name="version" onkeyup="changeIt();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-md-3 control-label">Name</label>
+
+                    <div class="col-md-8">
+                        <input id="name" class="form-control" type="text" value="Demo" name="name" onkeyup="changeIt();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-md-3 control-label">Description</label>
+
+                    <div class="col-md-8">
+                        <input id="description" class="form-control" type="text" value="Demo project for Nemesis" name="description" onkeyup="changeIt();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="packageName" class="col-md-3 control-label">Package Name</label>
+
+                    <div class="col-md-8">
+                        <input id="packageName" class="form-control" type="text" value="org.test.demo" name="packageName" onkeyup="changeIt();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nemesisVersion" class="col-md-3 control-label">Nemesis Version</label>
+
+                    <div class="col-md-8">
+                        <select class="form-control" name="bootVersion" id="nemesisVersion" onchange="changeIt();">
+                            <option value="0.9-SNAPSHOT">0.9 (SNAPSHOT)</option>
+                            <option value="0.8" selected>0.8</option>
+                            <option value="0.7">0.7</option>
+                            <option value="0.6">0.6</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="dependencies" class="col-sm-6">
+                <h3>Result</h3>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <textarea readonly="readonly" class="form-control" id="cmdLine">mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=b2c-archetype -DarchetypeVersion=0.8 -DgroupId=org.test -DartifactId=demo -Dversion=1.0 -Dpackage=org.test.demo -Dproject-name=Demo -DarchetypeRepository=https://repository.nemesis.io/artifactory/libs-release/ -DinteractiveMode=false</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function changeIt() {
+        var nemesisVersion = document.getElementById("nemesisVersion").value;
+        var groupId = document.getElementById("groupId").value;
+        var artifactId = document.getElementById("artifactId").value;
+        var version = document.getElementById("version").value;
+        var packageName = document.getElementById("packageName").value;
+        var projectName = document.getElementById("name").value;
+
+        var cmd = 'mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=b2c-archetype -DarchetypeVersion=' + nemesisVersion + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId + ' -Dversion=' + version + ' -Dpackage=' + packageName + ' -Dproject-name=' + projectName + ' -Dproject-bean-name=' + projectName.toLowerCase();
+
+        if (nemesisVersion.match(/.*SNAPSHOT/)) {
+            cmd += ' -DarchetypeRepository=https://repository.nemesis.io/artifactory/libs-snapshot/';
+        } else {
+            cmd += ' -DarchetypeRepository=https://repository.nemesis.io/artifactory/libs-release/';
+        }
+        cmd += ' -DinteractiveMode=false';
+        document.getElementById("cmdLine").value = cmd;
+    }
+</script>
+</body>
+</html>
