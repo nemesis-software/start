@@ -75,49 +75,49 @@
                     <label for="groupId" class="col-md-3 control-label">Group</label>
 
                     <div class="col-md-8">
-                        <input id="groupId" class="form-control" type="text" value="org.test" name="groupId" onkeyup="changeMetadata();">
+                        <input id="groupId" class="form-control" type="text" value="org.test" name="groupId" onkeyup="changeMetadata('groupId');" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="artifactId" class="col-md-3 control-label">Artifact</label>
 
                     <div class="col-md-8">
-                        <input id="artifactId" class="form-control" type="text" value="demo" name="artifactId" onkeyup="changeMetadata();">
+                        <input id="artifactId" class="form-control" type="text" value="demo" name="artifactId" onkeyup="changeMetadata('artifactId');" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="version" class="col-md-3 control-label">Version</label>
 
                     <div class="col-md-8">
-                        <input id="version" class="form-control" type="text" value="1.0-SNAPSHOT" name="version" onkeyup="changeMetadata();">
+                        <input id="version" class="form-control" type="text" value="1.0-SNAPSHOT" name="version" onkeyup="changeMetadata('version');" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="col-md-3 control-label">Name</label>
 
                     <div class="col-md-8">
-                        <input id="name" class="form-control" type="text" value="Demo" name="name" onkeyup="changeMetadata();">
+                        <input id="name" class="form-control" type="text" value="Demo" name="name" onkeyup="changeMetadata('name');" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="description" class="col-md-3 control-label">Description</label>
 
                     <div class="col-md-8">
-                        <input id="description" class="form-control" type="text" value="Demo project for Nemesis" name="description" onkeyup="changeMetadata();">
+                        <input id="description" class="form-control" type="text" value="Demo project for Nemesis" name="description" onkeyup="changeMetadata('description');" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="packageName" class="col-md-3 control-label">Package Name</label>
 
                     <div class="col-md-8">
-                        <input id="packageName" class="form-control" type="text" value="org.test.demo" name="packageName" onkeyup="changeMetadata();">
+                        <input id="packageName" class="form-control" type="text" value="org.test.demo" name="packageName" onkeyup="changeMetadata('packageName');" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="nemesisVersion" class="col-md-3 control-label">Nemesis Version</label>
 
                     <div class="col-md-8">
-                        <select class="form-control" name="bootVersion" id="nemesisVersion" onchange="changeMetadata();">
+                        <select class="form-control" name="bootVersion" id="nemesisVersion" onchange="changeMetadata('nemesisVersion');">
                             <option value="1.0-SNAPSHOT">1.0 (SNAPSHOT)</option>
 			    <option value="0.9" selected>0.9</option>
                             <option value="0.8">0.8</option>
@@ -144,10 +144,10 @@
 		document.getElementById("projectType").value=type;
 		document.querySelectorAll(".plan-highlight")[0].className = "plan";
 		document.getElementById("plan-" + type).className = "plan plan-highlight";
-		changeMetadata();
+		changeMetadata('');
 	}
 	
-    function changeMetadata() {
+    function changeMetadata(metadataId) {
 		var projectType = document.getElementById("projectType").value;
         var nemesisVersion = document.getElementById("nemesisVersion").value;
         var groupId = document.getElementById("groupId").value;
@@ -155,6 +155,24 @@
         var version = document.getElementById("version").value;
         var packageName = document.getElementById("packageName").value;
         var projectName = document.getElementById("name").value;
+
+		if (metadataId == 'groupId' || metadataId == 'artifactId') {
+			if (!(/^[A-Za-z0-9_\-.]+$/).test(document.getElementById(metadataId).value)) {
+				document.getElementById(metadataId).className = "form-control error";
+			} else {
+				document.getElementById(metadataId).className = "form-control";
+			}
+		}
+		
+		if (metadataId == 'packageName') {
+			var reservedKeywords = [ 'abstract', 'continue', 'for', 'new', 'switch', 'assert','default','goto', 'package','synchronized', 'boolean', 'do', 'if', 'private', 'this', 'break', 'double', 'implements', 'protected', 'throw', 'byte', 'else', 'import', 'public', 'throws', 'case', 'enum', 'instanceof', 'return', 'transient', 'catch', 'extends', 'int', 'short', 'try', 'char', 'final', 'interface', 'static', 'void', 'class', 'finally', 'long', 'strictfp', 'volatile', 'const', 'float', 'native', 'super', 'while'];
+
+			if (!(/^[A-Za-z.]+$/).test(document.getElementById(metadataId).value) || new RegExp( '\\b' + reservedKeywords.join('\\b|\\b') + '\\b').test(document.getElementById(metadataId).value)) {
+				document.getElementById(metadataId).className = "form-control error";
+			} else {
+				document.getElementById(metadataId).className = "form-control";
+			}
+		}
 
         var cmd = 'mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=samplestore-archetype -DarchetypeVersion=' + nemesisVersion + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId + ' -Dversion=' + version + ' -Dpackage=' + packageName + ' -Dproject-package=' + packageName + ' -Dproject-name=' + projectName + ' -Dproject-bean-name=' + projectName.toLowerCase();
 

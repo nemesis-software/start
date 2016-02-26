@@ -14,6 +14,11 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
+.error {
+	border: 1px solid red !important;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px red !important;
+}
+
 .plans {
   margin: auto;
   overflow: hidden;
