@@ -100,13 +100,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="description" class="col-md-3 control-label">Description</label>
-
-                    <div class="col-md-8">
-                        <input id="description" class="form-control" type="text" value="Demo project for Nemesis" name="description" onkeyup="changeMetadata('description');" required>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="packageName" class="col-md-3 control-label">Package Name</label>
 
                     <div class="col-md-8">
@@ -175,6 +168,14 @@
 				document.getElementById(metadataId).className = "form-control";
 			}
 		}
+   
+                if (metadataId == 'name') {
+                        if (!(/^[A-Za-z0-9_\-.]+$/).test(document.getElementById(metadataId).value)) {
+                                document.getElementById(metadataId).className = "form-control error";
+                        } else {
+                                document.getElementById(metadataId).className = "form-control";
+                        }
+                }
 
         var cmd = 'mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=samplestore-archetype -DarchetypeVersion=' + nemesisVersion + ' -DgroupId=' + groupId + ' -DartifactId=' + artifactId + ' -Dversion=' + version + ' -Dpackage=' + packageName + ' -Dproject-package=' + packageName + ' -Dproject-name=' + projectName + ' -Dproject-bean-name=' + artifactId;
 
