@@ -12,7 +12,7 @@ html, body, .container {
   height: 100%;
 }
 textarea.form-control[readonly] {
-  height: 330px;
+  height: 28280px;
   background-color: #34302d;
   color: white;
 }
