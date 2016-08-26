@@ -152,7 +152,7 @@
         var projectName = document.getElementById("name").value;
 
 		if (metadataId == 'groupId' || metadataId == 'artifactId') {
-			if (!(/^[A-Za-z0-9_\-.]+$/).test(document.getElementById(metadataId).value)) {
+			if (!(/^[A-Za-z0-9_.]+$/).test(document.getElementById(metadataId).value)) {
 				document.getElementById(metadataId).className = "form-control error";
 			} else {
 				document.getElementById(metadataId).className = "form-control";
