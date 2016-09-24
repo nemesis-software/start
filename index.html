@@ -111,8 +111,9 @@
 
                     <div class="col-md-8">
                         <select class="form-control" name="bootVersion" id="nemesisVersion" onchange="changeMetadata('nemesisVersion');">
-                            <option value="1.3.0.BUILD-SNAPSHOT">1.3.0.BUILD-SNAPSHOT</option>
-                            <option value="1.2.0.RELEASE" selected>1.2.0.RELEASE</option>
+                            <option value="1.4.0.BUILD-SNAPSHOT">1.4.0.BUILD-SNAPSHOT</option>
+                            <option value="1.3.0.RELEASE" selected>1.3.0.RELEASE</option>
+                            <option value="1.2.0.RELEASE">1.2.0.RELEASE</option>
                             <option value="1.1.0.RELEASE">1.1.RELEASE</option>
                             <option value="1.0">1.0</option>
                             <option value="0.9">0.9</option>
@@ -128,7 +129,7 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <textarea readonly="readonly" class="form-control" id="cmdLine">mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=samplestore-archetype -DarchetypeVersion=1.2.0.RELEASE -DgroupId=org.test -DartifactId=demo -Dversion=1.0-SNAPSHOT -Dpackage=org.test.demo -Dproject-package=org.test.demo -Dproject-name=Demo -Dproject-bean-name=demo -DarchetypeRepository=https://repository.nemesis.io/artifactory/libs-release/ -DinteractiveMode=false</textarea>
+                        <textarea readonly="readonly" class="form-control" id="cmdLine">mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=samplestore-archetype -DarchetypeVersion=1.3.0.RELEASE -DgroupId=org.test -DartifactId=demo -Dversion=1.0-SNAPSHOT -Dpackage=org.test.demo -Dproject-package=org.test.demo -Dproject-name=Demo -Dproject-bean-name=demo -DarchetypeRepository=https://repository.nemesis.io/artifactory/libs-release/ -DinteractiveMode=false</textarea>
                     </div>
                 </div>
             </div>
