@@ -153,6 +153,7 @@
 
      	if (metadataId == 'groupId' || metadataId == 'artifactId') {
             document.getElementById("packageName").value = groupId + '.' + artifactId;
+            validatePackageName();
     		if (!(/^[A-Za-z0-9_.]+$/).test(document.getElementById(metadataId).value)) {
         		document.getElementById(metadataId).className = "form-control error";
         	} else {
@@ -168,13 +169,7 @@
         var projectName = document.getElementById("name").value;
 
 		if (metadataId == 'packageName') {
-			var reservedKeywords = [ 'abstract', 'continue', 'for', 'new', 'switch', 'assert','default','goto', 'package','synchronized', 'boolean', 'do', 'if', 'private', 'this', 'break', 'double', 'implements', 'protected', 'throw', 'byte', 'else', 'import', 'public', 'throws', 'case', 'enum', 'instanceof', 'return', 'transient', 'catch', 'extends', 'int', 'short', 'try', 'char', 'final', 'interface', 'static', 'void', 'class', 'finally', 'long', 'strictfp', 'volatile', 'const', 'float', 'native', 'super', 'while'];
-
-			if (!(/^[A-Za-z]+[A-Za-z0-9_.]*$/).test(document.getElementById(metadataId).value) || new RegExp( '\\b' + reservedKeywords.join('\\b|\\b') + '\\b').test(document.getElementById(metadataId).value)) {
-				document.getElementById(metadataId).className = "form-control error";
-			} else {
-				document.getElementById(metadataId).className = "form-control";
-			}
+            validatePackageName();
 		}
    
                 if (metadataId == 'name') {
@@ -198,6 +193,17 @@
 			cmd += ' -Dplatforms=' + projectType;
 		}
         document.getElementById("cmdLine").value = cmd;
+    }
+
+    function validatePackageName() {
+	  var metadataId = 'packageName';
+      var reservedKeywords = [ 'abstract', 'continue', 'for', 'new', 'switch', 'assert','default','goto', 'package','synchronized', 'boolean', 'do', 'if', 'private', 'this', 'break', 'double', 'implements', 'protected', 'throw', 'byte', 'else', 'import', 'public', 'throws', 'case', 'enum', 'instanceof', 'return', 'transient', 'catch', 'extends', 'int', 'short', 'try', 'char', 'final', 'interface', 'static', 'void', 'class', 'finally', 'long', 'strictfp', 'volatile', 'const', 'float', 'native', 'super', 'while'];
+
+      if (!(/^[A-Za-z]+[A-Za-z0-9_.]*$/).test(document.getElementById(metadataId).value) || new RegExp( '\\b' + reservedKeywords.join('\\b|\\b') + '\\b').test(document.getElementById(metadataId).value)) {
+        document.getElementById(metadataId).className = "form-control error";
+      } else {
+        document.getElementById(metadataId).className = "form-control";
+      }
     }
 </script>
 </body>
