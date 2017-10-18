@@ -177,7 +177,16 @@ $(function(){
 					isActive = nemesis.svgHelper.hasClass(self, 'active'),
 					assetNum = self.data('asset');
 
-                $("#projectType").val(self.data('command'));
+
+                var currentVals = $("#projectType").val().split(",");
+
+				if (isActive) {
+					$("#projectType").val(currentVals.push(self.data('command')).join());
+				}
+				else {
+				    $("#projectType").val(currentVals.splice($.inArray(self.data('command'), currentVals),1).join());
+				}
+
 				changeMetadata('');
 
 				$.each($('[data-asset="' + assetNum + '"]'), function(i, obj) {
