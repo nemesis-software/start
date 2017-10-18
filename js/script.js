@@ -177,18 +177,7 @@ $(function(){
 					isActive = nemesis.svgHelper.hasClass(self, 'active'),
 					assetNum = self.data('asset');
 
-				changeType(self.data.command);
-
-
-				// Add active class
-				if (isActive) {
-					$('.shell-body li[data-asset="' + assetNum + '"]').remove();
-				}
-
-				// Remove active class
-				else {
-					$('.shell-body').append('<li data-asset="'+assetNum+'">'+self.data('command')+'</li>');
-				}
+				changeMetadata('');
 
 				$.each($('[data-asset="' + assetNum + '"]'), function(i, obj) {
 					nemesis.svgHelper.toggleClass($(obj), 'active');
