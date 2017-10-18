@@ -283,7 +283,7 @@
 			if (projectType != 'all') {
 				cmd += ' -Dplatforms=' + projectType;
 			}
-			document.getElementById("cmdLine").html = cmd;
+			document.getElementById("cmdLine").text(cmd);
 		}
 
 		function validatePackageName() {
