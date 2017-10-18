@@ -228,6 +228,7 @@
 		var nemesis = {};
 
 
+
 </script>
 <script>
 		function changeType(type) {
@@ -282,7 +283,7 @@
 			if (projectType != 'all') {
 				cmd += ' -Dplatforms=' + projectType;
 			}
-			document.getElementById("cmdLine").value = cmd;
+			document.getElementById("cmdLine").html = cmd;
 		}
 
 		function validatePackageName() {
@@ -295,6 +296,7 @@
 			document.getElementById(metadataId).className = "form-control";
 		  }
 		}
+
 
 
 </script>
