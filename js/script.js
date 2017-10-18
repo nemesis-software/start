@@ -133,6 +133,23 @@ $(function(){
 		},
 
 		/**
+		 * Calculate max-height of shell-body
+		 * Settings for my current resolution:
+		 * 210 / 330 * 100 = 63.636363636
+		 *
+		 * @return {void}
+		 * @author Vladimir Kuzmov <me@vkuzmov.com>
+		 */
+		setShellBodyHeight: function() {
+			var previewHeight = $('header .module-setup .preview').height(),
+				shellBodyHeight = Math.floor(this.percents(63.636363636, previewHeight));
+
+			$('header .module-setup .preview .shell-body').css({
+				'max-height': shellBodyHeight+'px'
+			});
+		},
+
+		/**
 		 * Init header composition.
 		 *
 		 * @return void
@@ -225,6 +242,8 @@ $(function(){
 
 				self.toggleClass('off').toggleClass('on')
 			});
+
+			nemesis.setShellBodyHeight();
 		},
 
 		/**
@@ -244,6 +263,7 @@ $(function(){
 
 	$(window).resize(function() {
 		nemesis.triangles($(this));
+		nemesis.setShellBodyHeight();
 	});
 
 });

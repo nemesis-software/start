@@ -246,20 +246,20 @@ header {
       background-image: url(../img/switch-off.png); }
     header .module-setup .preview {
       position: absolute;
-      top: 50px;
+      top: 13%;
       left: 50%;
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       transform: translateX(-50%);
       width: 40.666666667%;
-      height: 270px;
+      height: 75.170842825%;
       background: url(../img/laptop.png) center center no-repeat;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -ms-background-size: cover;
       background-size: cover; }
       header .module-setup .preview .shell-wrap {
-        width: 63.333333333%;
+        width: 69.333333%;
         margin: 35px auto 0 auto;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
         font: 16px Arial, sans-serif;
@@ -309,7 +309,7 @@ header {
           font: 0.8em 'Andale Mono', Consolas, 'Courier New';
           line-height: 1.6em;
           overflow-y: auto;
-          height: 150px;
+          min-height: 150px;
           -webkit-border-bottom-right-radius: 3px;
           -webkit-border-bottom-left-radius: 3px;
           -moz-border-radius-bottomright: 3px;
@@ -336,7 +336,7 @@ main {
     width: 300px; }
   main .strokes {
     position: relative;
-    padding-top: 125px;
+    padding-top: 50px;
     padding-bottom: 255px;
     background: url(../img/strokes.png) 0 0 repeat-x; }
   main .strokes.grey {
