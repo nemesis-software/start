@@ -99,7 +99,7 @@
 
 		<footer>
 			<svg class="triangle" viewBox="0 0 1 1" preserveAspectRatio="none">
-				<polyline points="1,0  1,1  0,1" fill="#333" class="bottom"/>
+				<polyline points="1,0  1,1  0,1" fill="#333" class="bottom" />
 			</svg>
 			<div class="container">
 				<div class="footer-panels footer-nav">
@@ -107,89 +107,97 @@
 						<div class="item">
 							<h3>About</h3>
 							<ul>
-								<li><a href="./company.html">Our Company</a></li>
-								<li><a href="./offices.html">Office Locations</a></li>
-								<li><a href="./team.html">Our Team</a></li>
+								<li><a href="https://nemesis.io/about/company">Our Company</a></li>
+								<li><a href="https://nemesis.io/about/offices">Office Locations</a></li>
+								<li><a href="https://nemesis.io/about/team">Our Team</a></li>
+								<li><a href="https://nemesis.io/about/services">Our Services</a></li>
 							</ul>
 						</div>
 						<div class="item">
-							<h3>Solutions</h3>
+							<h3>Products</h3>
 							<ul>
-								<li><a href="./solutions.html">Digital Transformation</a></li>
-								<li><a href="#">Omnichannel</a></li>
-								<li><a href="./magento-nemesis.html">Replatforming</a></li>
-								<li><a href="#">Industry types</a></li>
-								<li><a href="#">Business model types</a></li>
+								<li><a href="https://nemesis.io/product/application-development-framework">Application Development Framework</a></li>
+								<li><a href="https://nemesis.io/product/commerce/b2c">B2C Commerce Solutions</a></li>
+								<li><a href="https://nemesis.io/product/commerce/b2b">B2B Commerce Solutions</a></li>
+								<li><a href="https://nemesis.io/product/cms">Content Management System</a></li>
+								<li><a href="https://nemesis.io/product/pim">Product Information Management</a></li>
 							</ul>
 						</div>
 						<div class="item">
-							<h3>Features</h3>
+							<h3>Industries</h3>
 							<ul>
-								<li><a href="#">Overview</a></li>
-								<li><a href="#">Integrations</a></li>
+								<li><a href="https://nemesis.io/industry/retail">Retail</a></li>
+								<li><a href="https://nemesis.io/industry/manufacturing">Manifacturing</a></li>
+								<li><a href="https://nemesis.io/industry/telecommunication">Telecommunication</a></li>
+								<li><a href="https://nemesis.io/industry/insurance">Insurance</a></li>
+								<li><a href="https://nemesis.io/industry/banking">Banking</a></li>
+								<li><a href="https://nemesis.io/industry/media">Media</a></li>
+								<li><a href="https://nemesis.io/industry/logistics">Logistics</a></li>
+								<li><a href="https://nemesis.io/industry/travel">Travel</a></li>
+								<li><a href="https://nemesis.io/industry/healthcare">Healthcare</a></li>
+								<li><a href="https://nemesis.io/industry/public-sector">Public Sector</a></li>
 							</ul>
 						</div>
 					</div>
-
 					<div class="group">
 						<div class="item">
-							<h3>Partners</h3>
+							<h3>Solutions</h3>
 							<ul>
-								<li><a href="#">What do we offer</a></li>
-								<li><a href="./partners-apply.html">Become a partner</a></li>
-								<li><a href="./partners-find.html">Find a partner</a></li>
+								<li><a href="https://nemesis.io/solutions/digital-transformation">Digital Transformation</a></li>
+								<li><a href="https://nemesis.io/solutions/omnichannel">Omnichannel</a></li>
+								<li><a href="https://nemesis.io/solutions/replatforming">Replatforming</a></li>
+
 							</ul>
 						</div>
 						<div class="item">
-							<h3>Services</h3>
+							<h3>Partners</h3>
 							<ul>
-								<li><a href="#">Consulting</a></li>
-								<li><a href="#">Education</a></li>
-								<li><a href="#">Migration</a></li>
+								<li><a href="https://nemesis.io/partners">What do we offer</a></li>
+								<li><a href="https://nemesis.io/partners/apply">Become a partner</a></li>
+								<li><a href="https://nemesis.io/partners/search">Find a partner</a></li>
 							</ul>
 						</div>
 						<div class="item">
 							<h3>Resources</h3>
 							<ul>
-								<li><a href="./blog.html">Blog</a></li>
-								<li><a href="./faq.html">FAQ</a></li>
+								<li><a href="https://nemesis.io/blog">Blog</a></li>
+								<li><a href="https://nemesis.io/resources/faq">FAQ</a></li>
+								<li><a href="https://docs.nemesis.io/">Documentation</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-
 				<div class="footer-panels col-2">
 					<div class="item">
-						<h3>Let’s get in touch</h3>
-						<form class="form-inline">
+						<h3>Subscribe to our mailing list</h3>
+						<form action="subscribe" method="POST" id="subscribeForm" name="subscribeForm" class="form-inline ajax-validated">
 							<div class="form-group">
-								<input type="email" class="form-control dark" />
+								<input type="text" name="email" id="subscribeEmail" class="form-control dark" />
 							</div>
-							<button type="submit" class="btn btn-green">Subscribe</button>
+							<button type="submit" class="btn btn-green" name="subscribe" id="subscribeFormButton">Subscribe</button>
 						</form>
+						<div class="form-message"></div>
 					</div>
 					<div class="item">
 						<div class="address">
-							47, "Cherni vrah" blvd.,<br/>
-							1784 Sofia, Bulgaria<br/>
-							T: +359 885 740 222  /  Email: <a href="mailto:info@nemesis.io">info@nemesis.io</a>
+							47, "Cherni vrah" blvd.,<br />
+							1404 Sofia, Bulgaria<br />
+							T: +359 885 740 222 / E-mail: <a href="/cdn-cgi/l/email-protection#61080f070e210f040c041208124f080e"><span class="__cf_email__" data-cfemail="e48d8a828ba48a818981978d97ca8d8b">[email&#160;protected]</span></a>
 						</div>
-
 						<div class="social">
 							<ul class="list-inline">
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.linkedin.com/company/10364544/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="https://twitter.com/nemesissoftware" target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="https://plus.google.com/100029887405618047714" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="https://www.facebook.com/nemesyssoftware/" target="_blank"><i class="fa fa-facebook"></i></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-
 				<div class="footer-panels col-2">
 					<div class="item tos">
 						<p>
-							<a href="./privacy.html">Privacy Policy</a> / <a href="./terms.html">Terms and conditions</a><br/>
+							<a href="https://nemesis.io/legal/privacy">Privacy Policy</a> / <a href="https://nemesis.io/legal/terms">Terms and conditions</a><br />
 							© 2017 Nemesis Software, Inc. All Rights Reserved.
 						</p>
 					</div>
