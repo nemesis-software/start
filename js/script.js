@@ -178,7 +178,7 @@ $(function(){
 					assetNum = self.data('asset');
 
 
-                var currentVals = $("#projectType").val().split(",");
+                var currentVals = $("#projectType").val() === "" ? [] : $("#projectType").val().split(",");
 
 				if (isActive) {
 				    var newVals = currentVals.splice($.inArray(self.data('command'), currentVals),1);
