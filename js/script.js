@@ -177,6 +177,9 @@ $(function(){
 					isActive = nemesis.svgHelper.hasClass(self, 'active'),
 					assetNum = self.data('asset');
 
+				changeType(self.data.command);
+
+
 				// Add active class
 				if (isActive) {
 					$('.shell-body li[data-asset="' + assetNum + '"]').remove();
