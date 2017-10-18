@@ -1,222 +1,233 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Namesis</title>
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" id="Viewport" name="viewport"/>
-	<meta name="description" content="" />
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css"/>
-	<link rel="stylesheet" href="./css/style.css" />
-	<link rel="shortcut icon" href="./img/favicon.ico" />
+    <meta charset="utf-8">
+    <title>Namesis</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" id="Viewport" name="viewport"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="shortcut icon" href="./img/favicon.ico"/>
 </head>
 
 <body>
-	<div class="viewport">
-		<header>
-			<div class="container">
-				<div class="logo">
-					<a href="./index.html"><img src="./img/logo.svg" /></a>
-				</div>
-			</div>
+<div class="viewport">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo.svg"/></a>
+            </div>
+        </div>
 
-			<div class="container">
-				<div class="module-setup">
-					<div id="header-composition"></div>
-					<div class="switch off"></div>
+        <div class="container">
+            <div class="module-setup">
+                <div id="header-composition"></div>
+                <div class="switch off"></div>
 
-					<div class="preview">
-						<div class="shell-wrap">
-							<p class="shell-top-bar">/Users/pjlangley/Documents/websites/</p>
-							<ul class="shell-body">
-								<li id="cmdLine">mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=samplestore-archetype -DarchetypeVersion=1.5.2.RELEASE -DgroupId=org.test -DartifactId=demo -Dversion=1.0-SNAPSHOT -Dpackage=org.test.demo -Dproject-package=org.test.demo -Dproject-name=Demo -Dproject-bean-name=demo -DarchetypeRepository=https://repository.nemesis.io/artifactory/libs-release/ -DinteractiveMode=false</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+                <div class="preview">
+                    <div class="shell-wrap">
+                        <p class="shell-top-bar">/home/user/workspace/nemesis/</p>
+                        <ul class="shell-body">
+                            <li id="cmdLine">mvn archetype:generate -DarchetypeGroupId=com.nemesis.archetype -DarchetypeArtifactId=samplestore-archetype
+                                -DarchetypeVersion=1.5.2.RELEASE -DgroupId=org.test -DartifactId=demo -Dversion=1.0-SNAPSHOT -Dpackage=org.test.demo
+                                -Dproject-package=org.test.demo -Dproject-name=Demo -Dproject-bean-name=demo
+                                -DarchetypeRepository=https://repository.nemesis.io/artifactory/libs-release/ -DinteractiveMode=false
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-			<div class="clearfix"></div>
-		</header>
+        <div class="clearfix"></div>
+    </header>
 
-		<main>
+    <main>
 
-			<div class="strokes grey">
-				<div class="container">
-					<div class="title">
-						<h1>Project Metadata</h1>
-					</div>
+        <div class="strokes grey">
+            <div class="container">
+                <div class="title">
+                    <h1>Project Metadata</h1>
+                </div>
 
-					<form class="simple-form">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<input id="groupId"type="text" class="form-control" placeholder="Group" onkeyup="changeMetadata('groupId');">
-								</div>
-								<div class="form-group">
-									<input id="artifactId"type="email" class="form-control" placeholder="Artifact" onkeyup="changeMetadata('artifactId');">
-								</div>
-								<div class="form-group">
-									<input id="version" type="text" class="form-control" placeholder="Version" onkeyup="changeMetadata('version');">
-								</div>
-							</div>
+                <form class="simple-form">
+                    <input id="baseDir" name="baseDir" type="hidden" value="demo">
+                    <input id="projectType" name="projectType" type="hidden" value="all"/>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input id="groupId" type="text" class="form-control" placeholder="Group" onkeyup="changeMetadata('groupId');">
+                            </div>
+                            <div class="form-group">
+                                <input id="artifactId" type="email" class="form-control" placeholder="Artifact" onkeyup="changeMetadata('artifactId');">
+                            </div>
+                            <div class="form-group">
+                                <input id="version" type="text" class="form-control" placeholder="Version" onkeyup="changeMetadata('version');">
+                            </div>
+                        </div>
 
-							<div class="col-sm-6">
-								<div class="form-group">
-									<input id="name" type="text" class="form-control" placeholder="Name" onkeyup="changeMetadata('name');">
-								</div>
-								<div class="form-group">
-									<input id="packageName" type="email" class="form-control" placeholder="Package Name" onkeyup="changeMetadata('packageName');">
-								</div>
-								<div class="form-group">
-									<select class="form-control custom-dropdown" name="nemesisVersion" id="nemesisVersion" onchange="changeMetadata('nemesisVersion');">
-										<option value="2.0.0.BUILD-SNAPSHOT">2.0.0.BUILD-SNAPSHOT</option>
-										<option value="1.5.3.BUILD-SNAPSHOT">1.5.3.BUILD-SNAPSHOT</option>
-										<option value="1.5.2.RELEASE" selected>1.5.2.RELEASE</option>
-										<option value="1.5.1.RELEASE">1.5.1.RELEASE</option>
-										<option value="1.5.0.RELEASE">1.5.0.RELEASE</option>
-										<option value="1.4.0.RELEASE">1.4.0.BUILD-SNAPSHOT</option>
-										<option value="1.3.0.RELEASE">1.3.0.RELEASE</option>
-										<option value="1.2.0.RELEASE">1.2.0.RELEASE</option>
-										<option value="1.1.0.RELEASE">1.1.RELEASE</option>
-										<option value="1.0">1.0</option>
-										<option value="0.9">0.9</option>
-										<option value="0.8">0.8</option>
-										<option value="0.7">0.7</option>
-										<option value="0.6">0.6</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</form>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input id="name" type="text" class="form-control" placeholder="Name" onkeyup="changeMetadata('name');">
+                            </div>
+                            <div class="form-group">
+                                <input id="packageName" type="email" class="form-control" placeholder="Package Name" onkeyup="changeMetadata('packageName');">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control custom-dropdown" name="nemesisVersion" id="nemesisVersion"
+                                        onchange="changeMetadata('nemesisVersion');">
+                                    <option value="2.0.0.BUILD-SNAPSHOT">2.0.0.BUILD-SNAPSHOT</option>
+                                    <option value="1.5.3.BUILD-SNAPSHOT">1.5.3.BUILD-SNAPSHOT</option>
+                                    <option value="1.5.2.RELEASE" selected>1.5.2.RELEASE</option>
+                                    <option value="1.5.1.RELEASE">1.5.1.RELEASE</option>
+                                    <option value="1.5.0.RELEASE">1.5.0.RELEASE</option>
+                                    <option value="1.4.0.RELEASE">1.4.0.BUILD-SNAPSHOT</option>
+                                    <option value="1.3.0.RELEASE">1.3.0.RELEASE</option>
+                                    <option value="1.2.0.RELEASE">1.2.0.RELEASE</option>
+                                    <option value="1.1.0.RELEASE">1.1.RELEASE</option>
+                                    <option value="1.0">1.0</option>
+                                    <option value="0.9">0.9</option>
+                                    <option value="0.8">0.8</option>
+                                    <option value="0.7">0.7</option>
+                                    <option value="0.6">0.6</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
-				</div>
-			</div>
+            </div>
+        </div>
 
-		</main>
+    </main>
 
-		<footer>
-			<svg class="triangle" viewBox="0 0 1 1" preserveAspectRatio="none">
-				<polyline points="1,0  1,1  0,1" fill="#333" class="bottom" />
-			</svg>
-			<div class="container">
-				<div class="footer-panels footer-nav">
-					<div class="group">
-						<div class="item">
-							<h3>About</h3>
-							<ul>
-								<li><a href="https://nemesis.io/about/company">Our Company</a></li>
-								<li><a href="https://nemesis.io/about/offices">Office Locations</a></li>
-								<li><a href="https://nemesis.io/about/team">Our Team</a></li>
-								<li><a href="https://nemesis.io/about/services">Our Services</a></li>
-							</ul>
-						</div>
-						<div class="item">
-							<h3>Products</h3>
-							<ul>
-								<li><a href="https://nemesis.io/product/application-development-framework">Application Development Framework</a></li>
-								<li><a href="https://nemesis.io/product/commerce/b2c">B2C Commerce Solutions</a></li>
-								<li><a href="https://nemesis.io/product/commerce/b2b">B2B Commerce Solutions</a></li>
-								<li><a href="https://nemesis.io/product/cms">Content Management System</a></li>
-								<li><a href="https://nemesis.io/product/pim">Product Information Management</a></li>
-							</ul>
-						</div>
-						<div class="item">
-							<h3>Industries</h3>
-							<ul>
-								<li><a href="https://nemesis.io/industry/retail">Retail</a></li>
-								<li><a href="https://nemesis.io/industry/manufacturing">Manifacturing</a></li>
-								<li><a href="https://nemesis.io/industry/telecommunication">Telecommunication</a></li>
-								<li><a href="https://nemesis.io/industry/insurance">Insurance</a></li>
-								<li><a href="https://nemesis.io/industry/banking">Banking</a></li>
-								<li><a href="https://nemesis.io/industry/media">Media</a></li>
-								<li><a href="https://nemesis.io/industry/logistics">Logistics</a></li>
-								<li><a href="https://nemesis.io/industry/travel">Travel</a></li>
-								<li><a href="https://nemesis.io/industry/healthcare">Healthcare</a></li>
-								<li><a href="https://nemesis.io/industry/public-sector">Public Sector</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="group">
-						<div class="item">
-							<h3>Solutions</h3>
-							<ul>
-								<li><a href="https://nemesis.io/solutions/digital-transformation">Digital Transformation</a></li>
-								<li><a href="https://nemesis.io/solutions/omnichannel">Omnichannel</a></li>
-								<li><a href="https://nemesis.io/solutions/replatforming">Replatforming</a></li>
+    <footer>
+        <svg class="triangle" viewBox="0 0 1 1" preserveAspectRatio="none">
+            <polyline points="1,0  1,1  0,1" fill="#333" class="bottom"/>
+        </svg>
+        <div class="container">
+            <div class="footer-panels footer-nav">
+                <div class="group">
+                    <div class="item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="https://nemesis.io/about/company">Our Company</a></li>
+                            <li><a href="https://nemesis.io/about/offices">Office Locations</a></li>
+                            <li><a href="https://nemesis.io/about/team">Our Team</a></li>
+                            <li><a href="https://nemesis.io/about/services">Our Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="https://nemesis.io/product/application-development-framework">Application Development Framework</a></li>
+                            <li><a href="https://nemesis.io/product/commerce/b2c">B2C Commerce Solutions</a></li>
+                            <li><a href="https://nemesis.io/product/commerce/b2b">B2B Commerce Solutions</a></li>
+                            <li><a href="https://nemesis.io/product/cms">Content Management System</a></li>
+                            <li><a href="https://nemesis.io/product/pim">Product Information Management</a></li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>Industries</h3>
+                        <ul>
+                            <li><a href="https://nemesis.io/industry/retail">Retail</a></li>
+                            <li><a href="https://nemesis.io/industry/manufacturing">Manifacturing</a></li>
+                            <li><a href="https://nemesis.io/industry/telecommunication">Telecommunication</a></li>
+                            <li><a href="https://nemesis.io/industry/insurance">Insurance</a></li>
+                            <li><a href="https://nemesis.io/industry/banking">Banking</a></li>
+                            <li><a href="https://nemesis.io/industry/media">Media</a></li>
+                            <li><a href="https://nemesis.io/industry/logistics">Logistics</a></li>
+                            <li><a href="https://nemesis.io/industry/travel">Travel</a></li>
+                            <li><a href="https://nemesis.io/industry/healthcare">Healthcare</a></li>
+                            <li><a href="https://nemesis.io/industry/public-sector">Public Sector</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="item">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="https://nemesis.io/solutions/digital-transformation">Digital Transformation</a></li>
+                            <li><a href="https://nemesis.io/solutions/omnichannel">Omnichannel</a></li>
+                            <li><a href="https://nemesis.io/solutions/replatforming">Replatforming</a></li>
 
-							</ul>
-						</div>
-						<div class="item">
-							<h3>Partners</h3>
-							<ul>
-								<li><a href="https://nemesis.io/partners">What do we offer</a></li>
-								<li><a href="https://nemesis.io/partners/apply">Become a partner</a></li>
-								<li><a href="https://nemesis.io/partners/search">Find a partner</a></li>
-							</ul>
-						</div>
-						<div class="item">
-							<h3>Resources</h3>
-							<ul>
-								<li><a href="https://nemesis.io/blog">Blog</a></li>
-								<li><a href="https://nemesis.io/resources/faq">FAQ</a></li>
-								<li><a href="https://docs.nemesis.io/">Documentation</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="footer-panels col-2">
-					<div class="item">
-						<h3>Subscribe to our mailing list</h3>
-						<form action="subscribe" method="POST" id="subscribeForm" name="subscribeForm" class="form-inline ajax-validated">
-							<div class="form-group">
-								<input type="text" name="email" id="subscribeEmail" class="form-control dark" />
-							</div>
-							<button type="submit" class="btn btn-green" name="subscribe" id="subscribeFormButton">Subscribe</button>
-						</form>
-						<div class="form-message"></div>
-					</div>
-					<div class="item">
-						<div class="address">
-							47, "Cherni vrah" blvd.,<br />
-							1404 Sofia, Bulgaria<br />
-							T: +359 885 740 222 / E-mail: <a href="/cdn-cgi/l/email-protection#61080f070e210f040c041208124f080e"><span class="__cf_email__" data-cfemail="e48d8a828ba48a818981978d97ca8d8b">[email&#160;protected]</span></a>
-						</div>
-						<div class="social">
-							<ul class="list-inline">
-								<li><a href="https://www.linkedin.com/company/10364544/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://twitter.com/nemesissoftware" target="_blank"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="https://plus.google.com/100029887405618047714" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="https://www.facebook.com/nemesyssoftware/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="footer-panels col-2">
-					<div class="item tos">
-						<p>
-							<a href="https://nemesis.io/legal/privacy">Privacy Policy</a> / <a href="https://nemesis.io/legal/terms">Terms and conditions</a><br />
-							© 2017 Nemesis Software, Inc. All Rights Reserved.
-						</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>Partners</h3>
+                        <ul>
+                            <li><a href="https://nemesis.io/partners">What do we offer</a></li>
+                            <li><a href="https://nemesis.io/partners/apply">Become a partner</a></li>
+                            <li><a href="https://nemesis.io/partners/search">Find a partner</a></li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="https://nemesis.io/blog">Blog</a></li>
+                            <li><a href="https://nemesis.io/resources/faq">FAQ</a></li>
+                            <li><a href="https://docs.nemesis.io/">Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-panels col-2">
+                <div class="item">
+                    <h3>Subscribe to our mailing list</h3>
+                    <form action="subscribe" method="POST" id="subscribeForm" name="subscribeForm" class="form-inline ajax-validated">
+                        <div class="form-group">
+                            <input type="text" name="email" id="subscribeEmail" class="form-control dark"/>
+                        </div>
+                        <button type="submit" class="btn btn-green" name="subscribe" id="subscribeFormButton">Subscribe</button>
+                    </form>
+                    <div class="form-message"></div>
+                </div>
+                <div class="item">
+                    <div class="address">
+                        47, "Cherni vrah" blvd.,<br/>
+                        1404 Sofia, Bulgaria<br/>
+                        T: +359 885 740 222 / E-mail: <a href="/cdn-cgi/l/email-protection#61080f070e210f040c041208124f080e"><span class="__cf_email__"
+                                                                                                                                   data-cfemail="e48d8a828ba48a818981978d97ca8d8b">[email&#160;protected]</span></a>
+                    </div>
+                    <div class="social">
+                        <ul class="list-inline">
+                            <li><a href="https://www.linkedin.com/company/10364544/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://twitter.com/nemesissoftware" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/100029887405618047714" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="https://www.facebook.com/nemesyssoftware/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-panels col-2">
+                <div class="item tos">
+                    <p>
+                        <a href="https://nemesis.io/legal/privacy">Privacy Policy</a> / <a href="https://nemesis.io/legal/terms">Terms and conditions</a><br/>
+                        © 2017 Nemesis Software, Inc. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.0.min.js">\x3C/script>')</script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
-	<script src="./js/script.js"></script>
-	<script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.0.min.js">\x3C/script>')</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
 		var nemesis = {};
-	</script>
-	<script>
+
+</script>
+<script>
 		function changeType(type) {
 			document.getElementById("projectType").value=type;
 			document.querySelectorAll(".plan-highlight")[0].className = "plan";
@@ -282,6 +293,7 @@
 			document.getElementById(metadataId).className = "form-control";
 		  }
 		}
-	</script>
+
+</script>
 </body>
 </html>
