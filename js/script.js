@@ -181,10 +181,12 @@ $(function(){
                 var currentVals = $("#projectType").val().split(",");
 
 				if (isActive) {
-					$("#projectType").val(currentVals.push(self.data('command')).join());
+				    var newVals = currentVals.push(self.data('command'));
+					$("#projectType").val(newVals.join());
 				}
 				else {
-				    $("#projectType").val(currentVals.splice($.inArray(self.data('command'), currentVals),1).join());
+				    var newVals = currentVals.splice($.inArray(self.data('command'), currentVals),1);
+				    $("#projectType").val(newVals.join());
 				}
 
 				changeMetadata('');
