@@ -177,7 +177,7 @@ $(function(){
 					isActive = nemesis.svgHelper.hasClass(self, 'active'),
 					assetNum = self.data('asset');
 
-                $("#projectType").value=self.data('command');
+                $("#projectType").val(self.data('command'));
 				changeMetadata('');
 
 				$.each($('[data-asset="' + assetNum + '"]'), function(i, obj) {
