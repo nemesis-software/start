@@ -226,19 +226,8 @@
 <script src="./js/script.js"></script>
 <script>
 		var nemesis = {};
-
-
-
-
 </script>
 <script>
-		function changeType(type) {
-			document.getElementById("projectType").value=type;
-			document.querySelectorAll(".plan-highlight")[0].className = "plan";
-			document.getElementById("plan-" + type).className = "plan plan-highlight";
-			changeMetadata('');
-		}
-
 		function changeMetadata(metadataId) {
 			var groupId = document.getElementById("groupId").value;
 			var artifactId = document.getElementById("artifactId").value;
