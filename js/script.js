@@ -185,10 +185,18 @@ $(function(){
                       return value != self.data('command');
                     });
 
+                    if (newVals.length===0) {
+                        newVals.push("none");
+                    }
+
 				    $("#projectType").val(newVals.join());
 				}
 				else {
-				    currentVals.push(self.data('command'));
+				    var newVals = jQuery.grep(currentVals, function(value) {
+                      return value != "none";
+                    });
+
+                    currentVals.push(self.data('command'));
 					$("#projectType").val(currentVals.join());
 				}
 
