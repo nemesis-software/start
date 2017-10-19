@@ -181,7 +181,7 @@ $(function(){
                 var currentVals = $("#projectType").val() === "" ? [] : $("#projectType").val().split(",");
 
 				if (isActive) {
-				    var newVals = jQuery.grep(newVals, function(value) {
+				    var newVals = jQuery.grep(currentVals, function(value) {
                       return value != self.data('command');
                     });
 
