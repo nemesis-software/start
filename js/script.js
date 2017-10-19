@@ -196,8 +196,8 @@ $(function(){
                       return value != "none";
                     });
 
-                    currentVals.push(self.data('command'));
-					$("#projectType").val(currentVals.join());
+                    newVals.push(self.data('command'));
+					$("#projectType").val(newVals.join());
 				}
 
 				changeMetadata('');
