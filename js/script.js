@@ -181,7 +181,10 @@ $(function(){
                 var currentVals = $("#projectType").val() === "" ? [] : $("#projectType").val().split(",");
 
 				if (isActive) {
-				    var newVals = currentVals.splice($.inArray(self.data('command'), currentVals),1);
+				    var newVals = jQuery.grep(newVals, function(value) {
+                      return value != self.data('command');
+                    });
+
 				    $("#projectType").val(newVals.join());
 				}
 				else {
