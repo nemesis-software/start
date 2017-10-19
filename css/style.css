@@ -336,7 +336,7 @@ main {
     width: 300px; }
   main .strokes {
     position: relative;
-    padding-top: 50px;
+    padding-top: 25px;
     padding-bottom: 255px;
     background: url(../img/strokes.png) 0 0 repeat-x; }
   main .strokes.grey {
