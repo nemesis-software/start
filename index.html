@@ -255,7 +255,7 @@
 			}
 
 			if (metadataId == 'name') {
-					if (!(/^[A-Za-z0-9_\-.]+$/).test(document.getElementById(metadataId).value)) {
+					if (!(/^[A-Za-z0-9_\-.]+$/).test(document.getElementById(metadataId).value) || !(/[A-Z]/).test(document.getElementById(metadataId).value[0])) {
 							document.getElementById(metadataId).className = "form-control error";
 					} else {
 							document.getElementById(metadataId).className = "form-control";
