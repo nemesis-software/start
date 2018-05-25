@@ -494,4 +494,5 @@ footer {
 
 .simple-form input.error {
     background: #E54600;
+    color: white;
 }
