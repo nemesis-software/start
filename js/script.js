@@ -236,13 +236,12 @@ $(function(){
 					}
 				}
 			});
-
-			// Switch On and Off
-			$('.module-setup .switch').on('click', function(e) {
+			
+			$('#allswitch').change(function() {
 				var self = $(this);
 
 				// Enable all modules
-				if (self.hasClass('off')) {
+				if (self.is(":checked")) {
 					$.each($('#header-composition .main.asset:not(.active)'), function(i, obj) {
 						$(obj).trigger('click');
 					});
@@ -254,8 +253,21 @@ $(function(){
 						$(obj).trigger('click');
 					});
 				}
+			});
+			
+			$('#headlessswitch').change(function() {
+				var self = $(this);
 
-				self.toggleClass('off').toggleClass('on')
+				if (self.is(":checked")) {
+					$("#htmlType").val('headless');
+				}
+
+				// Disable all modules
+				else {
+					$("#htmlType").val('');
+				}
+				
+				changeMetadata('');
 			});
 
 			nemesis.setShellBodyHeight();

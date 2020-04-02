@@ -143,54 +143,6 @@ input::-webkit-search-cancel-button {
 .hidden {
   display: none; }
 
-.btn {
-  height: 50px;
-  line-height: 50px;
-  padding: 0 50px;
-  border-radius: 30px;
-  color: white;
-  font-size: 18px;
-  border-width: 2px;
-  font-weight: bold;
-  border-style: solid;
-  background-color: transparent;
-  text-transform: uppercase; }
-
-.btn:active {
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important; }
-
-.btn-red {
-  color: white;
-  background-color: #e54600; }
-
-.btn-red:hover {
-  color: white;
-  background-color: #ff510d; }
-
-.btn-green {
-  border-color: #00b74a; }
-
-.btn-blue {
-  color: #333333;
-  border-color: #5bdafe; }
-
-.btn-blue:hover {
-  color: #5bdafe; }
-
-.btn-white {
-  color: white;
-  border-color: white; }
-
-.btn-white:hover {
-  color: #5bdafe; }
-
-.container {
-  position: relative;
-  width: 1160px;
-  padding-left: 0;
-  padding-right: 0; }
 
 /**
  * Header
@@ -226,7 +178,6 @@ header {
         stroke: #E54600; }
     header .module-setup .switch {
       position: absolute;
-      left: 50%;
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       transform: translateX(-50%);
@@ -240,10 +191,12 @@ header {
       background-repeat: no-repeat;
       background-position: center center;
       cursor: pointer; }
-    header .module-setup .switch.on {
-      background-image: url(../img/switch-on.png); }
-    header .module-setup .switch.off {
-      background-image: url(../img/switch-off.png); }
+    header .module-setup .switch-left {
+		left: 45%;
+    }
+    header .module-setup .switch-right {
+		left: 55%;
+    }
     header .module-setup .preview {
       position: absolute;
       top: 13%;
@@ -495,4 +448,35 @@ footer {
 .simple-form input.error {
     background: #E54600;
     color: white;
+}
+
+.custom-switch-btn {
+	border: 2px solid white;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { 
+	border-radius: 20px; 
+	border: 2px solid white;
+}
+.toggle.ios .toggle-handle { border-radius: 20px; }
+
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+	color:white;
+	font-weight:bold;
+	background-color:#52C6FB;
+}
+
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+	color:white;
+	font-weight:bold;
+	background-color:#52C6FB;
+}
+
+.btn-primary {
+	font-weight:bold;
+	background-color: #E54600;
+}
+
+.btn-primary:hover {
+	background-color: #E54600;
 }
