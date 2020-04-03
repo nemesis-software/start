@@ -143,6 +143,28 @@ input::-webkit-search-cancel-button {
 .hidden {
   display: none; }
 
+.container {
+  position: relative;
+  width: 1160px;
+  padding-left: 0;
+  padding-right: 0; }
+
+#subscribeFormButton {
+  height: 50px;
+  line-height: 50px;
+  border-radius: 30px;
+  color: white;
+  font-size: 18px;
+  border-width: 2px;
+  font-weight: bold;
+  border-style: solid;
+  background-color: transparent;
+  text-transform: uppercase; }
+
+.btn-green {
+  border-color: #00b74a; }
+
+
 
 /**
  * Header
