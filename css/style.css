@@ -164,7 +164,9 @@ input::-webkit-search-cancel-button {
 .btn-green {
   border-color: #00b74a; }
 
-
+.btn-success {
+	background-color: #53c6fc !important;
+}
 
 /**
  * Header
